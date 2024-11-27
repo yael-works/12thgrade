@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Products">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AmountGmBag" type="xs:double" />
+          <xs:element minOccurs="0" name="AmountGmMlay" type="xs:double" />
+          <xs:element minOccurs="0" name="AmountMlay" type="xs:double" />
+          <xs:element minOccurs="0" name="KodCateg" nillable="true" type="tns:Category" />
+          <xs:element minOccurs="0" name="KodProduct" type="xs:int" />
+          <xs:element minOccurs="0" name="NameProduct" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Picture" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Products" nillable="true" type="tns:Products" />
+  <xs:complexType name="BaseEntity">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="BaseEntity" nillable="true" type="tns:BaseEntity" />
+  <xs:complexType name="Category">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KodCateg" type="xs:int" />
+          <xs:element minOccurs="0" name="Nameteur" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Category" nillable="true" type="tns:Category" />
+  <xs:complexType name="KindAmountProduct">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Grams" type="xs:double" />
+          <xs:element minOccurs="0" name="KodKindProduct" type="xs:int" />
+          <xs:element minOccurs="0" name="NameKindAmount" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KindAmountProduct" nillable="true" type="tns:KindAmountProduct" />
+  <xs:complexType name="ArrayOfProducts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Products" nillable="true" type="tns:Products" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProducts" nillable="true" type="tns:ArrayOfProducts" />
+  <xs:complexType name="ArrayOfProductToBuying">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductToBuying" nillable="true" type="tns:ProductToBuying" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductToBuying" nillable="true" type="tns:ArrayOfProductToBuying" />
+  <xs:complexType name="ProductToBuying">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:int" />
+          <xs:element minOccurs="0" name="KodKindBuying" nillable="true" type="tns:KindOfBuying" />
+          <xs:element minOccurs="0" name="KodProduct" nillable="true" type="tns:Products" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductToBuying" nillable="true" type="tns:ProductToBuying" />
+  <xs:complexType name="KindOfBuying">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KodKindBuying" type="xs:int" />
+          <xs:element minOccurs="0" name="NameKindBuying" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="KindOfBuying" nillable="true" type="tns:KindOfBuying" />
+  <xs:complexType name="ArrayOfProductToRecipe">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductToRecipe" nillable="true" type="tns:ProductToRecipe" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductToRecipe" nillable="true" type="tns:ArrayOfProductToRecipe" />
+  <xs:complexType name="ProductToRecipe">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AmountGrams" type="xs:double" />
+          <xs:element minOccurs="0" name="KodProduct" nillable="true" type="tns:Products" />
+          <xs:element minOccurs="0" name="KodRecipe" nillable="true" type="tns:Recipe" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ProductToRecipe" nillable="true" type="tns:ProductToRecipe" />
+  <xs:complexType name="Recipe">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AmountMana" type="xs:int" />
+          <xs:element minOccurs="0" name="KodRecipe" type="xs:int" />
+          <xs:element minOccurs="0" name="NameRecipe" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Recipe" nillable="true" type="tns:Recipe" />
+  <xs:complexType name="ArrayOfRecipe">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Recipe" nillable="true" type="tns:Recipe" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecipe" nillable="true" type="tns:ArrayOfRecipe" />
+  <xs:complexType name="ArrayOfUsesProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsesProduct" nillable="true" type="tns:UsesProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsesProduct" nillable="true" type="tns:ArrayOfUsesProduct" />
+  <xs:complexType name="UsesProduct">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:double" />
+          <xs:element minOccurs="0" name="DateUse" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="KodProduct" nillable="true" type="tns:Products" />
+          <xs:element minOccurs="0" name="KodUse" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UsesProduct" nillable="true" type="tns:UsesProduct" />
+  <xs:complexType name="ArrayOfKindAmountProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KindAmountProduct" nillable="true" type="tns:KindAmountProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKindAmountProduct" nillable="true" type="tns:ArrayOfKindAmountProduct" />
+  <xs:complexType name="ArrayOfKindOfBuying">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KindOfBuying" nillable="true" type="tns:KindOfBuying" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKindOfBuying" nillable="true" type="tns:ArrayOfKindOfBuying" />
+  <xs:complexType name="ArrayOfCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategory" nillable="true" type="tns:ArrayOfCategory" />
+</xs:schema>

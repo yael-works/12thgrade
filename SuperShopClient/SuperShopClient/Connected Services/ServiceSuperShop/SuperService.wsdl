@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="SuperService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServiceShop/SuperService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServiceShop/SuperService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServiceShop/SuperService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Model" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/WcfServiceShop/SuperService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfServiceNEW" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISuperService_Hithul_InputMessage">
+    <wsdl:part name="parameters" element="tns:Hithul" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_Hithul_OutputMessage">
+    <wsdl:part name="parameters" element="tns:HithulResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateProductAmount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductAmount" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateProductAmount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductsBySelect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsBySelect" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductsBySelect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsBySelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductsExistsBySelect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsExistsBySelect" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductsExistsBySelect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsExistsBySelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProducts" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListProductsExists_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProductsExists" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListProductsExists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProductsExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByCode" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetImage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetImage" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetImage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductToBuyingBySelect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductToBuyingBySelect" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductToBuyingBySelect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductToBuyingBySelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddProductToBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToBuying" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddProductToBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateAmountProductToBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAmountProductToBuying" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateAmountProductToBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAmountProductToBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductToBuyingByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductToBuyingByCode" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductToBuyingByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductToBuyingByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteProductToBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductToBuying" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteProductToBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductToBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListProductsToBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProductsToBuying" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListProductsToBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProductsToBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductToRecipeBySelect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductToRecipeBySelect" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProductToRecipeBySelect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductToRecipeBySelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddProductToRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddProductToRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProductToRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateProductToRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductToRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateProductToRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductToRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProducToRecipetByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducToRecipetByCode" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetProducToRecipetByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProducToRecipetByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteProductToRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductToRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteProductToRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductToRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListProductToRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProductToRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListProductToRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProductToRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyProductToRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyProductToRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyProductToRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyProductToRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetRecipeBySelect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecipeBySelect" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetRecipeBySelect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecipeBySelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetRecipeByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecipeByCode" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetRecipeByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecipeByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteStatuseRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStatuseRecipe" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteStatuseRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStatuseRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetUsesProductBySelect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsesProductBySelect" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetUsesProductBySelect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsesProductBySelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateUsesProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsesProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateUsesProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsesProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetUsesProductByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsesProductByCode" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetUsesProductByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsesProductByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteUsesProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUsesProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteUsesProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUsesProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListUsesProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListUsesProducts" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListUsesProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListUsesProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyUsesProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyUsesProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyUsesProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyUsesProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetkindAmountProductBySelect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetkindAmountProductBySelect" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetkindAmountProductBySelect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetkindAmountProductBySelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddkindAmountProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddkindAmountProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddkindAmountProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddkindAmountProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateKindAmountProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateKindAmountProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateKindAmountProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateKindAmountProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetKindAmountProductByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKindAmountProductByCode" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetKindAmountProductByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKindAmountProductByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteKindAmountProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteKindAmountProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteKindAmountProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteKindAmountProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListKindAmountProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListKindAmountProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListKindAmountProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListKindAmountProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyKindAmountProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyKindAmountProduct" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyKindAmountProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyKindAmountProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyKindOfBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyKindOfBuying" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyKindOfBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyKindOfBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetKindOfBuyingBySelect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKindOfBuyingBySelect" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetKindOfBuyingBySelect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKindOfBuyingBySelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddKindOfBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddKindOfBuying" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddKindOfBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddKindOfBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateKindOfBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateKindOfBuying" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateKindOfBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateKindOfBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetKindOfBuyingByCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKindOfBuyingByCode" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetKindOfBuyingByCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKindOfBuyingByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteKindOfBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteKindOfBuying" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_DeleteKindOfBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteKindOfBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListKindOfBuying_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListKindOfBuying" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListKindOfBuying_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListKindOfBuyingResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetNextKeyCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextKeyCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetCategoryBySelect_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryBySelect" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetCategoryBySelect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryBySelectResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_AddCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_UpdateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCategory" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetListCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetUseByTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUseByTime" />
+  </wsdl:message>
+  <wsdl:message name="ISuperService_GetUseByTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUseByTimeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ISuperService">
+    <wsdl:operation name="Hithul">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/Hithul" message="tns:ISuperService_Hithul_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/HithulResponse" message="tns:ISuperService_Hithul_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyProduct" message="tns:ISuperService_GetNextKeyProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyProductResponse" message="tns:ISuperService_GetNextKeyProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/AddProduct" message="tns:ISuperService_AddProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/AddProductResponse" message="tns:ISuperService_AddProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/UpdateProduct" message="tns:ISuperService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/UpdateProductResponse" message="tns:ISuperService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductAmount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/UpdateProductAmount" message="tns:ISuperService_UpdateProductAmount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/UpdateProductAmountResponse" message="tns:ISuperService_UpdateProductAmount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsBySelect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetProductsBySelect" message="tns:ISuperService_GetProductsBySelect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetProductsBySelectResponse" message="tns:ISuperService_GetProductsBySelect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsExistsBySelect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetProductsExistsBySelect" message="tns:ISuperService_GetProductsExistsBySelect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetProductsExistsBySelectResponse" message="tns:ISuperService_GetProductsExistsBySelect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetListProducts" message="tns:ISuperService_GetListProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetListProductsResponse" message="tns:ISuperService_GetListProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListProductsExists">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetListProductsExists" message="tns:ISuperService_GetListProductsExists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetListProductsExistsResponse" message="tns:ISuperService_GetListProductsExists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetProductByCode" message="tns:ISuperService_GetProductByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetProductByCodeResponse" message="tns:ISuperService_GetProductByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/DeleteProduct" message="tns:ISuperService_DeleteProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/DeleteProductResponse" message="tns:ISuperService_DeleteProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetImage" message="tns:ISuperService_GetImage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetImageResponse" message="tns:ISuperService_GetImage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductToBuyingBySelect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetProductToBuyingBySelect" message="tns:ISuperService_GetProductToBuyingBySelect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetProductToBuyingBySelectResponse" message="tns:ISuperService_GetProductToBuyingBySelect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/AddProductToBuying" message="tns:ISuperService_AddProductToBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/AddProductToBuyingResponse" message="tns:ISuperService_AddProductToBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAmountProductToBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/UpdateAmountProductToBuying" message="tns:ISuperService_UpdateAmountProductToBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/UpdateAmountProductToBuyingResponse" message="tns:ISuperService_UpdateAmountProductToBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductToBuyingByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetProductToBuyingByCode" message="tns:ISuperService_GetProductToBuyingByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetProductToBuyingByCodeResponse" message="tns:ISuperService_GetProductToBuyingByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductToBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/DeleteProductToBuying" message="tns:ISuperService_DeleteProductToBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/DeleteProductToBuyingResponse" message="tns:ISuperService_DeleteProductToBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListProductsToBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetListProductsToBuying" message="tns:ISuperService_GetListProductsToBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetListProductsToBuyingResponse" message="tns:ISuperService_GetListProductsToBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductToRecipeBySelect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetProductToRecipeBySelect" message="tns:ISuperService_GetProductToRecipeBySelect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetProductToRecipeBySelectResponse" message="tns:ISuperService_GetProductToRecipeBySelect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/AddProductToRecipe" message="tns:ISuperService_AddProductToRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/AddProductToRecipeResponse" message="tns:ISuperService_AddProductToRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductToRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/UpdateProductToRecipe" message="tns:ISuperService_UpdateProductToRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/UpdateProductToRecipeResponse" message="tns:ISuperService_UpdateProductToRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProducToRecipetByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetProducToRecipetByCode" message="tns:ISuperService_GetProducToRecipetByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetProducToRecipetByCodeResponse" message="tns:ISuperService_GetProducToRecipetByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductToRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/DeleteProductToRecipe" message="tns:ISuperService_DeleteProductToRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/DeleteProductToRecipeResponse" message="tns:ISuperService_DeleteProductToRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListProductToRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetListProductToRecipe" message="tns:ISuperService_GetListProductToRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetListProductToRecipeResponse" message="tns:ISuperService_GetListProductToRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyProductToRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyProductToRecipe" message="tns:ISuperService_GetNextKeyProductToRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyProductToRecipeResponse" message="tns:ISuperService_GetNextKeyProductToRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyRecipe" message="tns:ISuperService_GetNextKeyRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyRecipeResponse" message="tns:ISuperService_GetNextKeyRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipeBySelect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetRecipeBySelect" message="tns:ISuperService_GetRecipeBySelect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetRecipeBySelectResponse" message="tns:ISuperService_GetRecipeBySelect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/AddRecipe" message="tns:ISuperService_AddRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/AddRecipeResponse" message="tns:ISuperService_AddRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/UpdateRecipe" message="tns:ISuperService_UpdateRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/UpdateRecipeResponse" message="tns:ISuperService_UpdateRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipeByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetRecipeByCode" message="tns:ISuperService_GetRecipeByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetRecipeByCodeResponse" message="tns:ISuperService_GetRecipeByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/DeleteRecipe" message="tns:ISuperService_DeleteRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/DeleteRecipeResponse" message="tns:ISuperService_DeleteRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetListRecipe" message="tns:ISuperService_GetListRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetListRecipeResponse" message="tns:ISuperService_GetListRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStatuseRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/DeleteStatuseRecipe" message="tns:ISuperService_DeleteStatuseRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/DeleteStatuseRecipeResponse" message="tns:ISuperService_DeleteStatuseRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsesProductBySelect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetUsesProductBySelect" message="tns:ISuperService_GetUsesProductBySelect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetUsesProductBySelectResponse" message="tns:ISuperService_GetUsesProductBySelect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsesProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/UpdateUsesProduct" message="tns:ISuperService_UpdateUsesProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/UpdateUsesProductResponse" message="tns:ISuperService_UpdateUsesProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsesProductByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetUsesProductByCode" message="tns:ISuperService_GetUsesProductByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetUsesProductByCodeResponse" message="tns:ISuperService_GetUsesProductByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUsesProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/DeleteUsesProduct" message="tns:ISuperService_DeleteUsesProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/DeleteUsesProductResponse" message="tns:ISuperService_DeleteUsesProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListUsesProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetListUsesProducts" message="tns:ISuperService_GetListUsesProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetListUsesProductsResponse" message="tns:ISuperService_GetListUsesProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyUsesProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyUsesProduct" message="tns:ISuperService_GetNextKeyUsesProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyUsesProductResponse" message="tns:ISuperService_GetNextKeyUsesProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetkindAmountProductBySelect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetkindAmountProductBySelect" message="tns:ISuperService_GetkindAmountProductBySelect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetkindAmountProductBySelectResponse" message="tns:ISuperService_GetkindAmountProductBySelect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddkindAmountProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/AddkindAmountProduct" message="tns:ISuperService_AddkindAmountProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/AddkindAmountProductResponse" message="tns:ISuperService_AddkindAmountProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKindAmountProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/UpdateKindAmountProduct" message="tns:ISuperService_UpdateKindAmountProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/UpdateKindAmountProductResponse" message="tns:ISuperService_UpdateKindAmountProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKindAmountProductByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetKindAmountProductByCode" message="tns:ISuperService_GetKindAmountProductByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetKindAmountProductByCodeResponse" message="tns:ISuperService_GetKindAmountProductByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKindAmountProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/DeleteKindAmountProduct" message="tns:ISuperService_DeleteKindAmountProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/DeleteKindAmountProductResponse" message="tns:ISuperService_DeleteKindAmountProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListKindAmountProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetListKindAmountProduct" message="tns:ISuperService_GetListKindAmountProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetListKindAmountProductResponse" message="tns:ISuperService_GetListKindAmountProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyKindAmountProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyKindAmountProduct" message="tns:ISuperService_GetNextKeyKindAmountProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyKindAmountProductResponse" message="tns:ISuperService_GetNextKeyKindAmountProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyKindOfBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyKindOfBuying" message="tns:ISuperService_GetNextKeyKindOfBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyKindOfBuyingResponse" message="tns:ISuperService_GetNextKeyKindOfBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKindOfBuyingBySelect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetKindOfBuyingBySelect" message="tns:ISuperService_GetKindOfBuyingBySelect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetKindOfBuyingBySelectResponse" message="tns:ISuperService_GetKindOfBuyingBySelect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddKindOfBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/AddKindOfBuying" message="tns:ISuperService_AddKindOfBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/AddKindOfBuyingResponse" message="tns:ISuperService_AddKindOfBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKindOfBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/UpdateKindOfBuying" message="tns:ISuperService_UpdateKindOfBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/UpdateKindOfBuyingResponse" message="tns:ISuperService_UpdateKindOfBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKindOfBuyingByCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetKindOfBuyingByCode" message="tns:ISuperService_GetKindOfBuyingByCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetKindOfBuyingByCodeResponse" message="tns:ISuperService_GetKindOfBuyingByCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKindOfBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/DeleteKindOfBuying" message="tns:ISuperService_DeleteKindOfBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/DeleteKindOfBuyingResponse" message="tns:ISuperService_DeleteKindOfBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListKindOfBuying">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetListKindOfBuying" message="tns:ISuperService_GetListKindOfBuying_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetListKindOfBuyingResponse" message="tns:ISuperService_GetListKindOfBuying_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyCategory" message="tns:ISuperService_GetNextKeyCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetNextKeyCategoryResponse" message="tns:ISuperService_GetNextKeyCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryBySelect">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetCategoryBySelect" message="tns:ISuperService_GetCategoryBySelect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetCategoryBySelectResponse" message="tns:ISuperService_GetCategoryBySelect_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/AddCategory" message="tns:ISuperService_AddCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/AddCategoryResponse" message="tns:ISuperService_AddCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/UpdateCategory" message="tns:ISuperService_UpdateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/UpdateCategoryResponse" message="tns:ISuperService_UpdateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetCategory" message="tns:ISuperService_GetCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetCategoryResponse" message="tns:ISuperService_GetCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetListCategory" message="tns:ISuperService_GetListCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetListCategoryResponse" message="tns:ISuperService_GetListCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUseByTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISuperService/GetUseByTime" message="tns:ISuperService_GetUseByTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISuperService/GetUseByTimeResponse" message="tns:ISuperService_GetUseByTime_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISuperService" type="tns:ISuperService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Hithul">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/Hithul" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetNextKeyProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/AddProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductAmount">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/UpdateProductAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsBySelect">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetProductsBySelect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsExistsBySelect">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetProductsExistsBySelect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListProducts">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetListProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListProductsExists">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetListProductsExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByCode">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetProductByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/DeleteProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImage">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductToBuyingBySelect">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetProductToBuyingBySelect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToBuying">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/AddProductToBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAmountProductToBuying">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/UpdateAmountProductToBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductToBuyingByCode">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetProductToBuyingByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductToBuying">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/DeleteProductToBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListProductsToBuying">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetListProductsToBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductToRecipeBySelect">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetProductToRecipeBySelect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProductToRecipe">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/AddProductToRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductToRecipe">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/UpdateProductToRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProducToRecipetByCode">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetProducToRecipetByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductToRecipe">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/DeleteProductToRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListProductToRecipe">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetListProductToRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyProductToRecipe">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetNextKeyProductToRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyRecipe">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetNextKeyRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipeBySelect">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetRecipeBySelect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRecipe">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/AddRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRecipe">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/UpdateRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipeByCode">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetRecipeByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRecipe">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/DeleteRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListRecipe">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetListRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStatuseRecipe">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/DeleteStatuseRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsesProductBySelect">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetUsesProductBySelect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsesProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/UpdateUsesProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsesProductByCode">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetUsesProductByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUsesProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/DeleteUsesProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListUsesProducts">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetListUsesProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyUsesProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetNextKeyUsesProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetkindAmountProductBySelect">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetkindAmountProductBySelect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddkindAmountProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/AddkindAmountProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKindAmountProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/UpdateKindAmountProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKindAmountProductByCode">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetKindAmountProductByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKindAmountProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/DeleteKindAmountProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListKindAmountProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetListKindAmountProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyKindAmountProduct">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetNextKeyKindAmountProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyKindOfBuying">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetNextKeyKindOfBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKindOfBuyingBySelect">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetKindOfBuyingBySelect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddKindOfBuying">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/AddKindOfBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateKindOfBuying">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/UpdateKindOfBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetKindOfBuyingByCode">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetKindOfBuyingByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteKindOfBuying">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/DeleteKindOfBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListKindOfBuying">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetListKindOfBuying" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextKeyCategory">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetNextKeyCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryBySelect">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetCategoryBySelect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCategory">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/AddCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCategory">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetListCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUseByTime">
+      <soap:operation soapAction="http://tempuri.org/ISuperService/GetUseByTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SuperService">
+    <wsdl:port name="BasicHttpBinding_ISuperService" binding="tns:BasicHttpBinding_ISuperService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfServiceShop/SuperService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="SuperShopClient.Child"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SuperShopClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:service="using:SuperShopClient.ServiceSuperShop"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FlowDirection" Value="RightToLeft"/>
+                <Setter  Property="Background" Value="#FFB8D6D6"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Width" Value="150"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="Grid">
+
+        </Style>
+    </Page.Resources>
+    <Grid  Background="#FFDBE6E6" FlowDirection="RightToLeft">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/pics/תמונה1-removebg-preview (1).png" Grid.Column="3" Margin="185,17,16,113" />
+        <Button Content="חזרה" x:Name="back" Margin="10,13,0,0" Width="133"  Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Click="back_Click" HorizontalAlignment="Left" />
+        <TextBlock Text="המוצרים בבית שלנו:" FontWeight="Bold"  Margin="31,9,0,0" Grid.Column="1" Grid.Row="0" FontSize="40" FlowDirection="RightToLeft" Height="55"  Width="393" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <TextBlock Text="בחירת קטגוריה:" Height="36" Margin="132,74,0,0" Grid.Row="0" Grid.Column="1" Width="177"  FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <ComboBox x:Name="KodCateg" Width="234" Grid.Row="0" Grid.Column="1" Margin="0,130,0,0" Height="39" SelectionChanged="KodCateg_SelectionChanged" HorizontalAlignment="Center"  />
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Width="900" Grid.RowSpan="3" Grid.ColumnSpan="3">
+            <VariableSizedWrapGrid x:Name="productsPanel" Width="900" Orientation="Horizontal" />
+        </ScrollViewer>
+        <Button Width="217" HorizontalAlignment="Left" Margin="43,25,0,0"   Visibility="Collapsed" Grid.Row="1" VerticalAlignment="Top" Height="44">
+            <Button.Flyout>
+                <Flyout x:Name="fl2">
+                    <StackPanel>
+                        <TextBlock Text="השתמשות במוצר:"/>
+                        <ComboBox x:Name="kindamountproduct"/>
+                        <TextBox x:Name="amount"  Header="כמה?" />
+                        <Button x:Name="btnUpdate" Grid.Column="3" Content="עדכון" Width="202" Click="btnUpdate_Click_1"/>
+                    </StackPanel>
+                </Flyout>
+            </Button.Flyout>
+        </Button>
+        <TextBlock/>
+    </Grid>
+</Page>

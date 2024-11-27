@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="SuperShopClient.NewRecipe"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SuperShopClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:service="using:SuperShopClient.ServiceSuperShop"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Style.Setters>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FlowDirection" Value="RightToLeft"/>
+                <Setter  Property="Background" Value="#FFB8D6D6"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="CornerRadius" Value="20"/>
+            </Style.Setters>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Style.Setters>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Width" Value="150"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+
+
+            </Style.Setters>
+        </Style>
+    </Page.Resources>
+    <Grid Background="#FFDBE6E6" FlowDirection="RightToLeft">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+
+        </Grid.ColumnDefinitions>
+        <Image Source="/pics/תמונה1-removebg-preview (1).png" Grid.Column="3" Margin="201,17,16,165" />
+        <Button Content="חזרה" Margin="10,8,0,0" Width="133" Click="Button_Click" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+        <TextBlock Text="יצירת מתכון חדש:" Height="81" Width="350" Margin="0,4,0,0" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  FontWeight="Bold" FontSize="40" VerticalAlignment="Top" />
+        <TextBox x:Name="Name2_Copy3"  FlowDirection="RightToLeft" Header="חיפוש מוצר:" Margin="60,210,47,210" Height="60" Width="213" Grid.RowSpan="2"/>
+        <ListView Name="lstV2" CanDrag="True"  CanDragItems="True" Grid.RowSpan="2" Margin="54,108,54,107" Grid.Row="1" SelectionChanged="lstV2_SelectionChanged">
+            <ListView.Header>
+                <StackPanel FlowDirection="RightToLeft" Width="150" Orientation="Horizontal">
+                    <TextBlock  FontSize="25" Text="שם" Width="159" Foreground="#FF9BA9F7"/>
+                </StackPanel>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="service:Products" >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="120" Text="{x:Bind  NameProduct}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBox  x:Name="NameRecipe" Margin="28,81,52,104"  FlowDirection="RightToLeft" Header="שם המתכון:" Grid.Column="1" Height="55 " Width="240" TextChanged="NameRecipe_TextChanged"/>
+        <Button x:Name="btt8" Content="הוספת המוצר"  Width="209" Height="45" Margin="28,10,0,0" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Click="btt8_Click" HorizontalAlignment="Left" />
+        <Button x:Name="btt9" Content="שמירת מתכון"  Width="257" Height="45" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="0,160,0,0" VerticalAlignment="Top" Click="btt9_Click" />
+        <Button x:Name="btt10" Content="מחיקת מוצר"  Width="209" Height="45"  Grid.Row="2" Grid.Column="1" Margin="28,88,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btt10_Click"/>
+        <StackPanel Grid.Row="1" Grid.Column="1" Height="200">
+            <TextBox x:Name="NameProduct" IsEnabled="False" FlowDirection="RightToLeft" Header="שם:" Height="60" Grid.Column="1" Width="316"/>
+            <ComboBox x:Name="KodKindAmount" Width="200" Header="סוג כמות:"  Height="60"  />
+            <TextBox x:Name="Grams"  FlowDirection="RightToLeft" Header="כמות:" Height="60" Width="316" />
+        </StackPanel>
+        <TextBlock Text="בחירת קטגוריה:" Height="27" HorizontalAlignment="Left" Margin="102,120,0,0" VerticalAlignment="Top" Width="177"  FontSize="22" Grid.Row="0"/>
+        <ComboBox x:Name="KodCateg" Width="184" Margin="0,167,0,35" SelectionChanged="KodCateg_SelectionChanged" VerticalAlignment="Stretch" HorizontalAlignment="Center" Height="30" />
+        <ListView Name="lstV3" CanDrag="True"  CanDragItems="True" Grid.RowSpan="2" Margin="195,95,135,120"  Grid.Column="2" Grid.Row="1" Grid.ColumnSpan="2" Width="200" SelectionChanged="lstV3_SelectionChanged">
+            <ListView.Header>
+                <StackPanel FlowDirection="RightToLeft" Width="260" Orientation="Horizontal">
+                    <TextBlock  FontSize="25" Text="שם" Width="100" Foreground="#FF9BA9F7"/>
+                    <TextBlock  FontSize="25" Text="גרם" Width="80" Foreground="#FF9BA9F7"/>
+
+                </StackPanel>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="service:ProductToRecipe" >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="120" Text="{x:Bind  KodProduct.NameProduct}"/>
+                        <TextBlock Width="120" Text="{x:Bind  AmountGrams}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock Text="מוצרי המתכון" Height="68" Width="275" Margin="195,201,0,0" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2"  FontWeight="Bold" FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.RowSpan="2" />
+        <TextBox  x:Name="AmountManots" Margin="50,81,90,104"  FlowDirection="RightToLeft" Header="מספר מנות" Grid.Column="2" Height="55 " Width="180" TextChanged="AmountManots_TextChanged"/>
+    </Grid>
+</Page>

@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="SuperShopClient.Tafrit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SuperShopClient"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:service="using:SuperShopClient.ServiceSuperShop"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid FlowDirection="RightToLeft">
+        
+        <NavigationView x:Name="menu1" IsSettingsVisible="False" IsBackEnabled="True" SelectionChanged="menu1_SelectionChanged"  PaneDisplayMode="Top"   Margin="-10,0,10,0"  BackRequested="menu1_BackRequested">
+            <NavigationView.MenuItems >
+                <NavigationViewItemHeader Content="מטבח חכם" />
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem x:Name="t2" Content="מוצרים" Foreground="#FFB8D6D6"  Icon="Tag" Margin="0,0,15,0"/>
+                <NavigationViewItem x:Name="t3" Content="אפיון שימושים למוצר" Foreground="#FFB8D6D6" Icon="Refresh"  Margin="0,0,15,0"/>
+                <NavigationViewItem x:Name="t4" Content="מוצרים לקניה" Foreground="#FFB8D6D6" Icon="Calculator" Margin="0,0,15,0"/>
+                <NavigationViewItem x:Name="t5" Content="אפיון קניה" Foreground="#FFB8D6D6" Icon="TouchPointer"  Margin="0,0,15,0"/>
+                <NavigationViewItem x:Name="t6" Content="מתכונים" Foreground="#FFB8D6D6" Icon="Calendar"  Margin="0,0,15,0"/>
+            </NavigationView.MenuItems>
+            <Frame  x:Name="f1" />
+        </NavigationView>
+    </Grid>
+</Page>
